@@ -1,0 +1,80 @@
+{% extends '../base.html' %}
+
+{% block content %}
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-4">Welcome, Marvellous</span>
+    </a>
+
+    {% comment %} <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+    </ul> {% endcomment %}
+</header>
+
+<div class="col m-5 p-5 pt-0">
+    <h3>Patient Details</h3>
+    <div class="row g-2">
+        <div class="col-md">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInputGrid" placeholder="First name">
+                <label for="floatingInputGrid">First name</label>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInputGrid" placeholder="Last name">
+                <label for="floatingInputGrid">Last name</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInputGrid" placeholder="Email">
+        <label for="floatingInputGrid">Email</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="tel" class="form-control" id="floatingInputGrid" placeholder="Phone">
+        <label for="floatingInputGrid">Phone</label>
+    </div>
+    <h5>Emergency contact details</h5>
+    <div class="row g-2">
+        <div class="col-md">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInputGrid" placeholder="Full name">
+                <label for="floatingInputGrid">Full name</label>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="form-floating mb-3">
+                <input type="tel" class="form-control" id="floatingInputGrid" placeholder="Phone">
+                <label for="floatingInputGrid">Phone</label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Describe Symptoms</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Describe how you've been feeling and anything that feels out of the ordinary..."></textarea>
+          </div>
+    </div>
+    <div class="row g-2">
+        <div class="col-md">
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="floatingInputGrid" placeholder="Preferred date">
+                <label for="floatingInputGrid">Preferred date</label>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="form-floating mb-3">
+                <input type="time" class="form-control" id="floatingInputGrid" placeholder="Preferred time">
+                <label for="floatingInputGrid">Preferred time</label>
+            </div>
+        </div>
+    </div>
+    <div class="text-center"><a href="#" class="btn btn-primary btn-lg">Request Appointment</a></div>
+</div>
+{% endblock %}

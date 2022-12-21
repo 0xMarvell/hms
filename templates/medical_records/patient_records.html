@@ -1,0 +1,67 @@
+{% extends '../base.html' %}
+
+{% block content %}
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-4">Welcome, Marvellous</span>
+    </a>
+
+    {% comment %} <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+    </ul> {% endcomment %}
+</header>
+
+<div class="col m-5 p-5 pt-0">
+    <h2 class="text-center">Medical Records For Patients</h2>
+    </br>
+    <div class="btn-group dropup" style="float:right;">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Filter
+        </button>
+        <ul class="dropdown-menu">
+          <!-- Dropdown menu links -->
+          {% comment %} <li><a class="dropdown-item" href="#">Name</a></li> {% endcomment %}
+          <li><a class="dropdown-item" href="#">Diagnosis</a></li>
+          <li><a class="dropdown-item" href="#">Accepted appointments</a></li>
+          <li><a class="dropdown-item" href="#">Rejected appointments</a></li>
+        </ul>
+      </div>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Symptoms</th>
+            <th scope="col">Appointment status</th>
+            <th scope="col">Diagnosis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>Otto</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            <td>Otto</td>
+            <td>Otto</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+{% endblock %}
