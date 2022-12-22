@@ -9,36 +9,37 @@
             <p class="col-lg-10 fs-4">An effifcient way to organize and track patient records and docotor's appointments</p>
           </div>
           <div class="col-md-10 mx-auto col-lg-5">
-            <form class="p-4 p-md-5 border rounded-3 bg-light">
+            <form action={% url 'login' %} method="POST" class="p-4 p-md-5 border rounded-3 bg-light">
+              {% csrf_token %}
               <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Email address</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="First Name">
+                <input name="first_name" type="text" class="form-control" id="floatingInput" placeholder="First Name">
                 <label for="floatingInput">First name</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Last Name">
+                <input name="last_name" type="text" class="form-control" id="floatingInput" placeholder="Last Name">
                 <label for="floatingInput">Last name</label>
               </div>
               <div class="form-floating mb-3">
-                <select class="form-select" aria-label="Default select example" style="padding-top:0.625rem; padding-bottom:0.625rem;">
-                  <option selected>Select account type</option>
+                <select name="acct_type" class="form-select" aria-label="Default select example" style="padding-top:0.625rem; padding-bottom:0.625rem;">
+                  {% comment %} <option selected>Select account type</option> {% endcomment %}
                   <option value="patient">Patient</option>
                   <option value="health-worker">Health Worker</option>
                 </select>
               </div>
               <div class="form-floating mb-3">
-                <input type="tel" class="form-control" id="floatingInput" placeholder="+234-xxx-xxx-xxxx">
+                <input name="phone" type="tel" class="form-control" id="floatingInput" placeholder="+234-xxx-xxx-xxxx">
                 <label for="floatingInput">Phone Number</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input name="password1" type="password" class="form-control" id="floatingPassword" placeholder="Password">
                 <label for="floatingPassword">Password</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input name="password2" type="password" class="form-control" id="floatingPassword" placeholder="Password">
                 <label for="floatingPassword">Confirm Password</label>
               </div>
               <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>

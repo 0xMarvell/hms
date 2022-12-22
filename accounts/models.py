@@ -44,7 +44,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_patient = models.BooleanField('patient', default=False)
     is_health_worker = models.BooleanField('health worker', default=False)
 
-    objects = CustomAccountManager()
+    objects_custom = CustomAccountManager()
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name', 'phone_number']
