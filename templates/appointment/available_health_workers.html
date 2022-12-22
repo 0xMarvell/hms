@@ -10,7 +10,11 @@
     </a>
 
     <ul class="nav nav-pills">
-        <li class="nav-item pt-3 pb-2"><a href="#" class="nav-link">Logout</a></li>
+        <li class="nav-item pt-3 pb-2"><a href="javascript: {document.getElementById('logout').submit()}" class="nav-link">Logout</a></li>
+        <form id="logout" method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <input type="hidden"/>
+          </form>
         
     </ul>
 </header>
@@ -24,7 +28,9 @@
     </form>
 </div>
 
+
 <div class="row text-center mt-3">
+    {% for worker in workers.all %}
     <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="100" height="100" xmlns="http://www.w3.org/2000/svg"
             role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -33,69 +39,11 @@
                 dy=".3em">100x100</text>
         </svg>
 
-        <h2 class="fw-normal">Dr A</h2>
-        <p>Therapist</p>
+        <h2 class="fw-normal">{{worker.first_name}} {{worker.last_name}}</h2>
+        <p>Health Worker</p>
         <p><a class="btn btn-primary" href={% url 'request-appointment' %}>Request Appointment</a></p>
     </div>
-    <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="100" height="100" xmlns="http://www.w3.org/2000/svg"
-            role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777"
-                dy=".3em">100x100</text>
-        </svg>
-
-        <h2 class="fw-normal">Dr B</h2>
-        <p>Therapist</p>
-        <p><a class="btn btn-primary" href="#">Request Appointment</a></p>
-    </div>
-    <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="100" height="100" xmlns="http://www.w3.org/2000/svg"
-            role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777"
-                dy=".3em">100x100</text>
-        </svg>
-
-        <h2 class="fw-normal">Dr C</h2>
-        <p>Therapist</p>
-        <p><a class="btn btn-primary" href="#">Request Appointment</a></p>
-    </div>
-    <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="100" height="100" xmlns="http://www.w3.org/2000/svg"
-            role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777"
-                dy=".3em">100x100</text>
-        </svg>
-
-        <h2 class="fw-normal">Dr D</h2>
-        <p>Therapist</p>
-        <p><a class="btn btn-primary" href="#">Request Appointment</a></p>
-    </div>
-    <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="100" height="100" xmlns="http://www.w3.org/2000/svg"
-            role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777"
-                dy=".3em">100x100</text>
-        </svg>
-
-        <h2 class="fw-normal">Dr E</h2>
-        <p>Therapist</p>
-        <p><a class="btn btn-primary" href="#">Request Appointment</a></p>
-    </div>
-    <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="100" height="100" xmlns="http://www.w3.org/2000/svg"
-            role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777"
-                dy=".3em">100x100</text>
-        </svg>
-
-        <h2 class="fw-normal">Dr F</h2>
-        <p>Therapist</p>
-        <p><a class="btn btn-primary" href="#">Request Appointment</a></p>
-    </div>
+    {% endfor %}
 </div>
+
 {% endblock %}

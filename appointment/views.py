@@ -1,13 +1,15 @@
 from django.shortcuts import render
-
+from django.contrib.auth.decorators import login_required
 from .models import PatientDetail
+from accounts.models import User
 
 # Create your views here.
-
+@login_required
 def dashboard(request):
-    return render(request, 'appointment/available_health_workers.html')
+    workers = User.objects_custom.filter(is_health_worker=True)
+    return render(request, 'appointment/available_health_workers.html', {'workers':workers})
 
-
+@login_required
 def request_appointment(request):
     if request.method == 'POST':
         appointment = PatientDetail(
